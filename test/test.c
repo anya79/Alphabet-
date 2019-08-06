@@ -11,7 +11,7 @@ CTEST(sort, sort_1_word)
 
   words[0] = "hello";
   words[1] = NULL;
-
+	
   sortWords(words);
 
 	ASSERT_EQUAL(strcmp(words[0], "hello"), 0);
@@ -27,7 +27,7 @@ CTEST(sort, sort_2_words)
   words[0] = "hello";
   words[1] = "again";
   words[2] = NULL;
-
+	
   sortWords(words);
 
 	ASSERT_EQUAL(strcmp(words[0], "again"), 0);
@@ -69,6 +69,7 @@ CTEST(reader, read_from_file)
 
   ASSERT_EQUAL(strcmp(string, "hello world!\n"), 0);
 }
+
 int main(int argc, const char** argv)
 {
     return ctest_main(argc, argv);
