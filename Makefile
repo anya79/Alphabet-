@@ -1,12 +1,12 @@
 CC=gcc
 flags=-O0 -std=c11
 
-all: createfolders build/main build/test runTests 
+all: createfolders build/main build/test runTests
 
-build/main: bin/main.o bin/reader.o bin/parser.o  bin/sort.o
+build/main: bin/main.o bin/reader.o bin/parser.o bin/sort.o
 	$(CC) $(flags) -o build/main bin/main.o bin/reader.o bin/parser.o bin/sort.o
 
-bin/main.o: src/main.c  
+bin/main.o: src/main.c
 	$(CC) $(flags) -c -o bin/main.o src/main.c
 
 bin/reader.o: src/reader.c src/reader.h
@@ -18,8 +18,8 @@ bin/parser.o: src/parser.c src/parser.h
 bin/sort.o: src/sort.h src/sort.c
 	$(CC) $(flags) -c -o bin/sort.o src/sort.c
 
-build/test: bin/test.o bin/sort.o  bin/parser.o bin/reader.o
-	gcc $(flags) -o build/test bin/test.o bin/sort.o  bin/parser.o bin/reader.o
+build/test: bin/test.o bin/sort.o bin/parser.o bin/reader.o
+	gcc $(flags) -o build/test bin/test.o bin/sort.o bin/parser.o bin/reader.o
 
 bin/test.o: test/test.c
 	gcc $(flags) -o bin/test.o -c test/test.c -Ithirdparty -Isrc
