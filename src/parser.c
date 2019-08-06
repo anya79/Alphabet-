@@ -10,6 +10,35 @@ char **parseWords(char *string) {
     case '\t':
       string[i] = ' ';
 
+break;
+    case '.':
+      string[i] = ' ';
+      break;
+    case ',':
+      string[i] = ' ';
+      break;
+    case '"':
+      string[i] = ' ';
+      break;
+    case '<':
+      string[i] = ' ';
+      break;
+    case '>':
+      string[i] = ' ';
+      break;
+    case '!':
+      string[i] = ' ';
+      break;
+    case '-':
+      string[i] = ' ';
+      break;
+    case '[':
+      string[i] = ' ';
+      break;
+    case ']':
+      string[i] = ' ';
+      break;
+
     default:
       break;
     }
